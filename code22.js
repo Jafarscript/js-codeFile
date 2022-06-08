@@ -1,22 +1,23 @@
-const twoSum = (array, goal) => {
-    let firstnum = 0;
-    let secondnum = 0;
+const nums = [1, 2, 3, 4, 6, 7];
+const goal = 10;
 
-    for(let i = 0; i < array.length; i++){
-        firstnum = array[i];
-        // console.log(firstnum)
-    }
+function twoSum(nums, goal) {
+  let start = 0;
+  let end = nums.length - 1;
 
-    for(let j = array.length - 1; j >= 0; j--){
-        secondnum = array[j];
-        // console.log(secondnum)
+  while (start <= end) {
+    const curr = nums[start] + nums[end];
+
+    if (curr > goal) {
+      end -= 1;
+    } else if (curr < goal) {
+      start += 1;
+    } else {
+      return [nums[start], nums[end]];
     }
-    if(firstnum + secondnum === goal){
-        console.log(true)
-    } else{
-        console.log(false)
-    }
+  }
+
+  return [];
 }
 
-
-twoSum([2, 3, 4, 5, 1], 9)
+console.log(twoSum(nums, goal));
