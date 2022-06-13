@@ -14,4 +14,4 @@ var fizzBuzz = function(n) {
     console.log(curr)
 }
 
-fizzBuzz(15)
+fizzBuzz(1000)
